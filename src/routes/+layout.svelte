@@ -1,4 +1,4 @@
-<script lang='ts'>
+<script lang="ts">
 	import { setupIonicBase } from 'ionic-svelte';
 
 	/* Call Ionic's setup routine */

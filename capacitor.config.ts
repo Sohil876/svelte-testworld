@@ -1,6 +1,6 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
-const appId = 'Svelte TestApp.ionic.io';
+const appId = 'io.svelte.testapp';
 const appName = 'Svelte TestApp';
 const server = process.argv.includes('-hmr')
 	? {

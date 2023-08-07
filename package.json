@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "vite dev --host",
 		"build": "vite build",
+		"ionic:build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -13,7 +14,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@capacitor/cli": "^5.2.2",
+		"@capacitor/cli": "5.2.2",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.20.4",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
@@ -34,8 +35,13 @@
 	"type": "module",
 	"dependencies": {
 		"@capacitor/android": "^5.2.2",
-		"@capacitor/core": "^5.2.2",
+		"@capacitor/app": "5.0.6",
+		"@capacitor/core": "5.2.2",
+		"@capacitor/haptics": "5.0.6",
+		"@capacitor/keyboard": "5.0.6",
+		"@capacitor/status-bar": "5.0.6",
 		"@ionic/core": "7.2.1",
+		"cordova-plugin-ionic": "5.5.3",
 		"ionic-svelte": "^0.5.82",
 		"ionicons": "^7.1.2"
 	}

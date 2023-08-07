@@ -1,5 +1,7 @@
 {
-  "name": "Svelte TestApp",
-  "integrations": {},
-  "type": "custom"
+	"name": "Svelte TestApp",
+	"integrations": {
+		"capacitor": {}
+	},
+	"type": "custom"
 }

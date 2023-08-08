@@ -29,12 +29,12 @@
 		NavigationBar.hide();
 	};
 	async function changeNavbarColor(navColor) {
-		if (navColor === undefined) {
-			console.log('Color not passed! Using default color (white)');
-			//navColor = "#FFFFFF"
-			NavigationBar.setColor({ darkButtons: true });
-		} else if (navColor !== undefined) {
-			NavigationBar.setColor({ color: navColor, darkButtons: true });
+		if (navColor === 'light') {
+			NavigationBar.setColor({ color: '#FFFFFF', darkButtons: true });
+		} else if (navColor === 'dark') {
+			NavigationBar.setColor({ color: '#000000', darkButtons: false });
+		} else if (navColor === 'transparent') {
+			NavigationBar.setColor({ color: '#00000000', darkButtons: false });
 		}
 	}
 </script>
@@ -89,8 +89,18 @@
 				tabindex="0"
 				mode="md"
 				fill="outline"
-				on:click={() => changeNavbarColor()}
-				on:keydown={() => changeNavbarColor()}
+				on:click={() => changeNavbarColor('light')}
+				on:keydown={() => changeNavbarColor('light')}
+			>
+				LightNavbar
+			</ion-button>
+			<ion-button
+				role="button"
+				tabindex="0"
+				mode="md"
+				fill="outline"
+				on:click={() => changeNavbarColor('dark')}
+				on:keydown={() => changeNavbarColor('dark')}
 			>
 				DarkNavbar
 			</ion-button>
@@ -99,10 +109,10 @@
 				tabindex="0"
 				mode="md"
 				fill="outline"
-				on:click={() => changeNavbarColor('#FF0000')}
-				on:keydown={() => changeNavbarColor('#FF0000')}
+				on:click={() => changeNavbarColor('transparent')}
+				on:keydown={() => changeNavbarColor('transparent')}
 			>
-				ColorNav
+				TransparentNavbar
 			</ion-button>
 		</ion-item>
 

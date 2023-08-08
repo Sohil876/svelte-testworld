@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { alertController } from 'ionic-svelte';
 	import IonPage from 'ionic-svelte/components/IonPage.svelte';
+	import {
+		NavigationBar,
+		NavigationBarPluginEvents
+	} from '@mauricewegner/capacitor-navigation-bar';
 
 	import defAV from '$lib/assets/avatar.png';
 
@@ -17,6 +21,12 @@
 			buttons: ['Ok']
 		};
 		return showAlert(options);
+	};
+	const showNavigationBar = async () => {
+		NavigationBar.show();
+	};
+	const hideNavigationBar = async () => {
+		NavigationBar.hide();
 	};
 </script>
 
@@ -35,14 +45,44 @@
 
 	<ion-card>
 		<ion-card-header>
-			<ion-card-subtitle> Great success!! </ion-card-subtitle>
-			<ion-card-title> Welcome to your app! </ion-card-title>
+			<ion-card-subtitle> TestApp </ion-card-subtitle>
+			<ion-card-title> Header </ion-card-title>
 		</ion-card-header>
 
-		<ion-card-content>
-			Thank you for using this starter. Click buttons below to open these guides (will open in new
-			window). Don't forget to open DevTools to see this app in mobile mode. Happy coding!!!
-		</ion-card-content>
+		<ion-card-content> Card Content </ion-card-content>
+
+		<ion-item>
+			<ion-button
+				role="button"
+				tabindex="0"
+				mode="md"
+				fill="outline"
+				on:click={showNavigationBar}
+				on:keypress={showNavigationBar}
+			>
+				ShowNavbar
+			</ion-button>
+			<ion-button
+				role="button"
+				tabindex="0"
+				mode="md"
+				fill="outline"
+				on:click={hideNavigationBar}
+				on:keypress={hideNavigationBar}
+			>
+				HideNavbar
+			</ion-button>
+			<ion-button
+				role="button"
+				tabindex="0"
+				mode="md"
+				fill="outline"
+				on:click={NavigationBar.setColor({ color: '#FF0000', darkButtons: true })}
+				on:keypress={NavigationBar.setColor({ color: '#FF0000', darkButtons: true })}
+			>
+				DarkNavbar
+			</ion-button>
+		</ion-item>
 
 		<ion-item>
 			<ion-label> Visit Ionic Showcase app with sourceviewer </ion-label>
@@ -91,10 +131,12 @@
 	<ion-card>
 		<ion-card-header> Live update Test </ion-card-header>
 		<ion-card-content>
-			<ion-button href="#" fill="outline" slot="end"> View </ion-button>
 			<ion-button
 				role="button"
 				tabindex="0"
+				mode="md"
+				shape="round"
+				fill="outline"
 				on:click={showSimpleAlert}
 				on:keypress={showSimpleAlert}
 			>

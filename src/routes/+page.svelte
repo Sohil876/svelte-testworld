@@ -5,6 +5,7 @@
 		NavigationBar,
 		NavigationBarPluginEvents
 	} from '@mauricewegner/capacitor-navigation-bar';
+	import { logoGithub } from 'ionicons/icons';
 
 	import defAV from '$lib/assets/avatar.png';
 
@@ -44,139 +45,184 @@
 </svelte:head>
 
 <IonPage>
-	<ion-card color="transparent">
-		<ion-card-content>
-			<ion-avatar>
-				<img alt="avatar" src={defAV} />
-			</ion-avatar>
+	<ion-header>
+		<ion-toolbar mode="ios" class="hf-toolbar">
+			<ion-buttons spot="start">
+				<ion-button href="https://github.com/Sohil876" target="_new">
+					<ion-avatar slot="start">
+						<img alt="avatar" src={defAV} />
+					</ion-avatar>
+				</ion-button>
+			</ion-buttons>
+			<ion-title class="head-title"> TestApp </ion-title>
+			<ion-buttons slot="end">
+				<ion-button
+					href="https://github.com/Sohil876/testApp-svelte"
+					target="_new"
+					color="dark"
+					fill="outline"
+				>
+					<ion-icon icon={logoGithub} />
+				</ion-button>
+			</ion-buttons>
+		</ion-toolbar>
+	</ion-header>
+
+	<ion-card class="card-scrollable">
+		<!--<ion-card-header>
+			<ion-card-subtitle> Subtitle </ion-card-subtitle>
+			<ion-card-title> Header </ion-card-title>
+		</ion-card-header>-->
+
+		<ion-card-content class="card-content-scrollable">
+			<div>
+				<ion-button
+					role="button"
+					tabindex="0"
+					mode="md"
+					fill="outline"
+					size="small"
+					on:click={showNavigationBar}
+					on:keypress={showNavigationBar}
+				>
+					ShowNavbar
+				</ion-button>
+				<ion-button
+					role="button"
+					tabindex="0"
+					mode="md"
+					fill="outline"
+					size="small"
+					on:click={hideNavigationBar}
+					on:keypress={hideNavigationBar}
+				>
+					HideNavbar
+				</ion-button>
+				<ion-button
+					role="button"
+					tabindex="0"
+					mode="md"
+					fill="outline"
+					size="small"
+					on:click={() => changeNavbarColor('light')}
+					on:keydown={() => changeNavbarColor('light')}
+				>
+					LightNavbar
+				</ion-button>
+				<ion-button
+					role="button"
+					tabindex="0"
+					mode="md"
+					fill="outline"
+					size="small"
+					on:click={() => changeNavbarColor('dark')}
+					on:keydown={() => changeNavbarColor('dark')}
+				>
+					DarkNavbar
+				</ion-button>
+				<ion-button
+					role="button"
+					tabindex="0"
+					mode="md"
+					fill="outline"
+					size="small"
+					on:click={() => changeNavbarColor('transparent')}
+					on:keydown={() => changeNavbarColor('transparent')}
+				>
+					TransparentNavbar
+				</ion-button>
+			</div>
+
+			<div>
+				<ion-item>
+					Ionic Showcase web app
+					<ion-button
+						href="https://ionicsvelte.firebaseapp.com/"
+						target="_new"
+						fill="outline"
+						size="small"
+						slot="end"
+					>
+						View
+					</ion-button>
+				</ion-item>
+				<ion-item>
+					Ionic component docs
+					<ion-button
+						href="https://ionicframework.com/docs/components"
+						target="_new"
+						fill="outline"
+						size="small"
+						slot="end"
+					>
+						View
+					</ion-button>
+				</ion-item>
+				<ion-item>
+					Svelte docs
+					<ion-button
+						href="https://svelte.dev/docs"
+						target="_new"
+						fill="outline"
+						size="small"
+						slot="end"
+					>
+						View
+					</ion-button>
+				</ion-item>
+				<ion-item>
+					Svelte Kit docs
+					<ion-button
+						href="https://kit.svelte.dev/docs/introduction"
+						target="_new"
+						fill="outline"
+						size="small"
+						slot="end"
+					>
+						View
+					</ion-button>
+				</ion-item>
+			</div>
+
+			<div>
+				<ion-item>
+					<ion-label> Live update Test </ion-label>
+					<ion-button
+						role="button"
+						tabindex="0"
+						mode="md"
+						fill="outline"
+						size="small"
+						on:click={showSimpleAlert}
+						on:keypress={showSimpleAlert}
+					>
+						Click Me!
+					</ion-button>
+				</ion-item>
+			</div>
 		</ion-card-content>
 	</ion-card>
 
-	<ion-card>
-		<ion-card-header>
-			<ion-card-subtitle> TestApp </ion-card-subtitle>
-			<!--<ion-card-title> Header </ion-card-title>-->
-		</ion-card-header>
-
-		<!--<ion-card-content> Card Content </ion-card-content>-->
-
-		<ion-item>
-			<ion-button
-				role="button"
-				tabindex="0"
-				mode="md"
-				fill="outline"
-				on:click={showNavigationBar}
-				on:keypress={showNavigationBar}
-			>
-				ShowNavbar
-			</ion-button>
-			<ion-button
-				role="button"
-				tabindex="0"
-				mode="md"
-				fill="outline"
-				on:click={hideNavigationBar}
-				on:keypress={hideNavigationBar}
-			>
-				HideNavbar
-			</ion-button>
-		</ion-item>
-
-		<ion-item>
-			<ion-button
-				role="button"
-				tabindex="0"
-				mode="md"
-				fill="outline"
-				on:click={() => changeNavbarColor('light')}
-				on:keydown={() => changeNavbarColor('light')}
-			>
-				LightNavbar
-			</ion-button>
-			<ion-button
-				role="button"
-				tabindex="0"
-				mode="md"
-				fill="outline"
-				on:click={() => changeNavbarColor('dark')}
-				on:keydown={() => changeNavbarColor('dark')}
-			>
-				DarkNavbar
-			</ion-button>
-			<ion-button
-				role="button"
-				tabindex="0"
-				mode="md"
-				fill="outline"
-				on:click={() => changeNavbarColor('transparent')}
-				on:keydown={() => changeNavbarColor('transparent')}
-			>
-				TransparentNavbar
-			</ion-button>
-		</ion-item>
-
-		<ion-item>
-			<ion-label> Ionic Showcase web app </ion-label>
-			<ion-button
-				href="https://ionicsvelte.firebaseapp.com/"
-				target="_new"
-				fill="outline"
-				slot="end"
-			>
-				View
-			</ion-button>
-		</ion-item>
-
-		<ion-item>
-			<ion-label> Ionic component docs </ion-label>
-			<ion-button
-				href="https://ionicframework.com/docs/components"
-				target="_new"
-				fill="outline"
-				slot="end"
-			>
-				View
-			</ion-button>
-		</ion-item>
-
-		<ion-item>
-			<ion-label> Svelte docs </ion-label>
-			<ion-button href="https://svelte.dev/docs" target="_new" fill="outline" slot="end">
-				View
-			</ion-button>
-		</ion-item>
-
-		<ion-item>
-			<ion-label> Svelte Kit docs </ion-label>
-			<ion-button
-				href="https://kit.svelte.dev/docs/introduction"
-				target="_new"
-				fill="outline"
-				slot="end"
-			>
-				View
-			</ion-button>
-		</ion-item>
-	</ion-card>
-
-	<ion-card>
-		<ion-card-header>
-			<ion-card-subtitle> Live update Test </ion-card-subtitle>
-		</ion-card-header>
-		<ion-item>
-			<ion-button
-				role="button"
-				tabindex="0"
-				mode="md"
-				shape="round"
-				fill="outline"
-				size="small"
-				on:click={showSimpleAlert}
-				on:keypress={showSimpleAlert}
-			>
-				Click Me!
-			</ion-button>
-		</ion-item>
-	</ion-card>
+	<ion-footer class="ion-padding">
+		<ion-toolbar mode="ios" class="hf-toolbar">
+			<ion-title> &copy; 2023 </ion-title>
+		</ion-toolbar>
+	</ion-footer>
 </IonPage>
+
+<style lang="css">
+	.hf-toolbar {
+		--background: #00000000;
+		padding: 1%;
+		margin: 1%;
+	}
+
+	.card-scrollable {
+		min-height: 30%;
+	}
+
+	.card-content-scrollable {
+		height: 100%;
+		overflow: scroll;
+	}
+</style>

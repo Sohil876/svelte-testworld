@@ -9,12 +9,12 @@
 
 	import defAV from '$lib/assets/avatar.png';
 
-	const showAlert = async (options) => {
+	async function showAlert(options) {
 		const alert = await alertController.create(options);
 		alert.present();
-	};
+	}
 
-	const showSimpleAlert = async () => {
+	async function showSimpleAlert() {
 		const options = {
 			header: 'Test Message',
 			subHeader: '',
@@ -22,13 +22,13 @@
 			buttons: ['Ok']
 		};
 		return showAlert(options);
-	};
-	const showNavigationBar = async () => {
+	}
+	async function showNavigationBar() {
 		NavigationBar.show();
-	};
-	const hideNavigationBar = async () => {
+	}
+	async function hideNavigationBar() {
 		NavigationBar.hide();
-	};
+	}
 	async function changeNavbarColor(navColor) {
 		if (navColor === 'light') {
 			NavigationBar.setColor({ color: '#FFFFFF', darkButtons: true });
@@ -82,8 +82,8 @@
 					mode="md"
 					fill="outline"
 					size="small"
-					on:click={showNavigationBar}
-					on:keypress={showNavigationBar}
+					on:click={() => showNavigationBar()}
+					on:keypress={() => showNavigationBar()}
 				>
 					ShowNavbar
 				</ion-button>
@@ -93,8 +93,8 @@
 					mode="md"
 					fill="outline"
 					size="small"
-					on:click={hideNavigationBar}
-					on:keypress={hideNavigationBar}
+					on:click={() => hideNavigationBar()}
+					on:keypress={() => hideNavigationBar()}
 				>
 					HideNavbar
 				</ion-button>
@@ -193,8 +193,8 @@
 						mode="md"
 						fill="outline"
 						size="small"
-						on:click={showSimpleAlert}
-						on:keypress={showSimpleAlert}
+						on:click={() => showSimpleAlert()}
+						on:keypress={() => showSimpleAlert()}
 					>
 						Click Me!
 					</ion-button>

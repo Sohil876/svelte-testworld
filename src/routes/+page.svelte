@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	export let data;
 </script>
 
@@ -6,7 +6,7 @@
 	{#each data.users as { avatar, lastName }}
 		<a href={`/${lastName}`} class="box">
 			<img src={avatar} alt={lastName} />
-			<h2>{lastName}</h2>
+			<h1>{lastName}</h1>
 		</a>
 	{/each}
 </main>
@@ -30,7 +30,7 @@
 		width: 15rem;
 		object-fit: contain;
 	}
-	.box h2 {
+	.box h1 {
 		text-align: center;
 	}
 </style>

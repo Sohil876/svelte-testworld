@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="page-body-links">
-		<a href="https://github.com/Sohil876">
+		<a href="https://github.com/Sohil876" target="_blank">
 			<img alt="Github" class="logos" src={githubLogo} />
 		</a>
 	</div>
@@ -18,15 +18,18 @@
 
 <style>
 	main {
-		margin: 4rem;
-		padding: 2rem;
-		box-shadow: 4px 5px 11px 10px lightgray;
+		min-height: 100vh;
+		margin: 1rem;
 	}
 	.page-header {
-		justify-content: center;
 		text-align: center;
-		font-size: 1rem;
+		font-size: 2rem;
 		color: gray;
+	}
+	.page-header hr {
+		border: 1rem 0 1rem 0;
+		margin: 1rem;
+		width: 100%;
 	}
 	.page-body-links {
 		display: flex;

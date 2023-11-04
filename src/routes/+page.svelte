@@ -16,11 +16,16 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 	.box {
-		padding: 0.25rem;
-		margin: 1.5rem;
+		padding: 0.5rem;
+		margin: 1rem;
 		color: salmon;
+		text-decoration: none;
 		box-shadow: 4px 5px 11px 2px lightgray;
 	}
 	.box:hover {

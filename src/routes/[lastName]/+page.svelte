@@ -11,6 +11,17 @@
 				<li>Title: {data.user.title}</li>
 				<li>Phone: {data.user.phone}</li>
 				<li>Email: {data.user.email}</li>
+				<li>
+					DOB: {data.user.birthday.toLocaleDateString('en-US', {
+						year: 'numeric',
+						month: '2-digit',
+						day: '2-digit'
+					})}
+				</li>
+				<li>
+					Subscription tier: {data.user.subscriptionTier[0].toUpperCase() +
+						data.user.subscriptionTier.slice(1)}
+				</li>
 			</ul>
 		</div>
 	</div>

@@ -11,7 +11,7 @@ export async function load({ params }) {
 			firstName: faker.person.firstName(),
 			avatar: `https://api.dicebear.com/9.x/adventurer/svg?seed=${lastName}`,
 			title: faker.person.jobTitle(),
-			phone: faker.phone.number(),
+			phone: faker.phone.number({ style: 'international' }),
 			email: faker.internet.email(),
 			birthday: faker.date.birthdate(),
 			subscriptionTier: faker.helpers.arrayElement(['free', 'basic', 'business'])
